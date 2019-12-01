@@ -1,0 +1,6 @@
+<mat-toolbar color="primary">
+  <span>Novo Projeto</span>
+</mat-toolbar>
+<div class="parking-container">
+  <app-projeto-form [projeto]="projeto" (formSubmit)="createProjeto($event)"></app-projeto-form>
+</div>

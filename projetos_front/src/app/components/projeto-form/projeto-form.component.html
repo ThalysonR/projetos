@@ -1,0 +1,49 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Insira as informações do projeto:</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form class="registro-form" #registroForm="ngForm" (ngSubmit)="onSubmit()">
+            <div>
+                <mat-form-field>
+                    <input type="text" matInput placeholder="Nome" name="nome" #nome="ngModel" required
+                        [(ngModel)]="projeto.nome">
+                </mat-form-field>
+                <div *ngIf="nome.invalid && (nome.dirty || nome.touched)">
+                    <mat-error *ngIf="nome.errors.required">
+                        Nome é obrigatório.
+                    </mat-error>
+                </div>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input type="text" matInput currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }"
+                        placeholder="Valor" name="valor" #valor="ngModel" required [(ngModel)]="projeto.valor">
+                </mat-form-field>
+                <div *ngIf="valor.invalid && (valor.dirty || valor.touched)">
+                    <mat-error *ngIf="valor.errors.required">
+                        Valor é obrigatório.
+                    </mat-error>
+                </div>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput [matDatepicker]="inicio" placeholder="Data de início" name="inicio" required
+                        #inputInicio="ngModel" [(ngModel)]="projeto.inicio" />
+                    <mat-datepicker-toggle matSuffix [for]="inicio"></mat-datepicker-toggle>
+                    <mat-datepicker #inicio></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput [matDatepicker]="fim" placeholder="Data de fim" name="fim" required
+                        #inputFim="ngModel" [(ngModel)]="projeto.fim" />
+                    <mat-datepicker-toggle matSuffix [for]="fim"></mat-datepicker-toggle>
+                    <mat-datepicker #fim></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <button mat-raised-button type="submit" [disabled]="registroForm.form.invalid"
+                color="primary">Registrar</button>
+        </form>
+    </mat-card-content>
+</mat-card>

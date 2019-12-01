@@ -1,0 +1,6 @@
+<mat-toolbar color="primary">
+    <span>{{ titulo }}</span>
+</mat-toolbar>
+<div class="parking-container">
+    <app-projeto-form [projeto]="projeto" (formSubmit)="updateProjeto($event)"></app-projeto-form>
+</div>

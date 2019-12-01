@@ -1,0 +1,12 @@
+<mat-card>
+  <mat-card-header>
+      <mat-card-title>{{ projeto.nome | uppercase }}</mat-card-title>
+      <mat-card-subtitle>{{ projeto.inicio | uppercase }} - {{ projeto.fim | uppercase }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <span>Valor: {{ projeto.valor | currency:'BRL':'symbol-narrow':'1.2-2':'pt' }}</span>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <mat-icon (click)="$event.stopPropagation(); delete.emit()">delete</mat-icon>
+  </mat-card-actions>
+</mat-card>

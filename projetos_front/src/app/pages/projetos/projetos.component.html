@@ -1,0 +1,12 @@
+<mat-toolbar color="primary">
+  <span>Projetos</span>
+</mat-toolbar>
+<div class="parking-container">
+  <ng-template [ngIf]="projetos.length > 0" [ngIfElse]="vazio">
+    <app-projeto-card *ngFor="let projeto of projetos" [projeto]="projeto" class="v-margin clickable" (delete)="delete(projeto)" (click)="updateProjeto(projeto)"
+      ></app-projeto-card>
+  </ng-template>
+  <ng-template #vazio>
+    <div>Nenhum projeto encontrado!</div>
+  </ng-template>
+</div>
