@@ -31,7 +31,7 @@ Aplicação cliente para consumir o CRUD de produtos. Foram usadas as seguintes 
 Foi disponibilizado um arquivo **docker-compose.yml** contendo os conteiners necessários à execução, já configurados. Para executar a aplicação usando docker, basta executar o compose.
 > docker-compose up
 
-O front-end será executado na porta 4200 (http://localhost:4200) e o back-end será executado na porta 8080 (http://localhost:8080).
+O front-end será executado na porta 80(http://localhost) e o back-end será executado na porta 8080 (http://localhost:8080).
 
 ### Execução Local
 
